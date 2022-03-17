@@ -2,13 +2,10 @@
 <h1>Home</h1>
 <p><%= value %></p>
 
+<% posts.forEach((post)=>{ %> 
+   <% let truncContent= post.content.substring(0,100) + '...'%>
+  
+<h1><%= post.title %></h1>
+<p><%= truncContent %> <a href='/posts/<%=post.title%>' >Read More</a></p>
 
-   <% posts.forEach((post)=>{ %>
-       <h1><%= post.title %></h1>  
-       <p><%= post.content %></p>  
-        
-      <%  }) %>
-
-
-   <%- include('partials/footer.ejs'); %>
-
+<% }) %> <%- include('partials/footer.ejs'); %>
